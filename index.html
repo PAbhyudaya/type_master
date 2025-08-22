@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonkeyType Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🐵</span>
+                <span class="logo-text">monkeytype</span>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-icon">👑</a>
+                <a href="#" class="nav-icon">ℹ️</a>
+                <a href="#" class="nav-icon">⚙️</a>
+                <a href="#" class="nav-icon">🔔</a>
+                <a href="#" class="nav-icon">👤</a>
+            </nav>
+        </header>
+
+        <!-- Settings Bar -->
+        <div class="settings-bar">
+            <div class="setting-group">
+                <button class="setting-btn" data-setting="punctuation">@ punctuation</button>
+                <button class="setting-btn" data-setting="numbers"># numbers</button>
+                <button class="setting-btn active" data-setting="time">🕐 time</button>
+            </div>
+            <div class="time-options">
+                <button class="time-btn">15</button>
+                <button class="time-btn active">30</button>
+                <button class="time-btn">60</button>
+                <button class="time-btn">120</button>
+            </div>
+        </div>
+
+        <!-- Timer Display -->
+        <div class="timer-display">
+            <span id="timerValue">30</span>
+        </div>
+
+        <!-- Main Typing Area -->
+        <main class="typing-area">
+            <div class="text-container">
+                <div class="typing-text" id="typingText">
+                    <span class="word">year</span>
+                    <span class="word">leave</span>
+                    <span class="word">with</span>
+                    <span class="word">more</span>
+                    <span class="word">in</span>
+                    <span class="word">system</span>
+                    <span class="word">late</span>
+                    <span class="word">off</span>
+                    <span class="word">during</span>
+                    <span class="word">large</span>
+                    <span class="word">mean</span>
+                    <span class="word">place</span>
+                    <br>
+                    <span class="word">life</span>
+                    <span class="word">must</span>
+                    <span class="word">you</span>
+                    <span class="word">she</span>
+                    <span class="word">look</span>
+                    <span class="word">use</span>
+                    <span class="word">by</span>
+                    <span class="word">into</span>
+                    <span class="word">group</span>
+                    <span class="word">leave</span>
+                    <span class="word">word</span>
+                    <span class="word">down</span>
+                    <span class="word">form</span>
+                    <br>
+                    <span class="word">know</span>
+                    <span class="word">problem</span>
+                    <span class="word">move</span>
+                    <span class="word">no</span>
+                    <span class="word">which</span>
+                    <span class="word">world</span>
+                    <span class="word">child</span>
+                    <span class="word">over</span>
+                    <span class="word">good</span>
+                    <span class="word">keep</span>
+                    <span class="word">own</span>
+                    <span class="word">word</span>
+                </div>
+                <div class="cursor" id="cursor"></div>
+            </div>
+
+            <!-- Restart Button -->
+            <div class="restart-button-container">
+                <button class="restart-test-btn" id="restartTestBtn">🔄 restart</button>
+            </div>
+
+            <!-- Results Area -->
+            <div class="results-area" id="resultsArea" style="display: none;">
+                <div class="result-stats">
+                    <div class="stat">
+                        <span class="stat-label">wpm</span>
+                        <span class="stat-value" id="wpmValue">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">acc</span>
+                        <span class="stat-value" id="accValue">0%</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">time</span>
+                        <span class="stat-value" id="timeValue">30s</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <input type="text" class="hidden-input" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#" class="footer-link">📧 contact</a>
+                <a href="#" class="footer-link">🛠️ support</a>
+                <a href="#" class="footer-link">🔗 github</a>
+                <a href="#" class="footer-link">💬 discord</a>
+                <a href="#" class="footer-link">🐦 twitter</a>
+                <a href="#" class="footer-link">📋 terms</a>
+                <a href="#" class="footer-link">🔒 security</a>
+                <a href="#" class="footer-link">🛡️ privacy</a>
+            </div>
+            <div class="footer-version">
+                <span>🔍 stealth</span>
+                <span>🏷️ v26.31.8</span>
+            </div>
+        </footer>
+
+        <!-- Command Line -->
+        <div class="command-line" id="commandLine" style="display: none;">
+            <span>esc</span> or <span>ctrl</span> + <span>shift</span> + <span>p</span> - command line
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
