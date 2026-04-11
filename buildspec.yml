@@ -13,9 +13,6 @@ phases:
   post_build:
     commands:
       - echo "Configuring NGINX"
-      - sudo systemctl enable nginx
-      - sudo systemctl restart nginx
-
 artifacts:
   files:
     - /var/www/html/index.html
