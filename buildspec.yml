@@ -3,18 +3,20 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing NGINX on Amazon Linux"
-      - sudo yum update -y
-      - sudo amazon-linux-extras install -y nginx1
+      - echo "Installing NGINX on Amazon Linux 2023"
+      - dnf install -y nginx
+
   build:
     commands:
-      - echo "Build started on `date`"
+      - echo "Build started on $(date)"
       - cp index.html /usr/share/nginx/html/
+
   post_build:
     commands:
-      - echo "Configuring NGINX"
-      - sudo systemctl enable nginx
-      - sudo systemctl start nginx
+      - echo "Validating NGINX config"
+      - nginx -t
+      - echo "Starting NGINX directly (no systemd in CodeBuild)"
+      - nginx
 
 artifacts:
   files:
