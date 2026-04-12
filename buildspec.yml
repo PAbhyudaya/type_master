@@ -3,21 +3,18 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing NGINX on Amazon Linux 2023"
-      - dnf install -y nginx
+      - echo No dependencies to install
 
   build:
     commands:
-      - echo "Build started on $(date)"
-      - cp index.html /usr/share/nginx/html/
+      - echo Packaging static files...
+      - zip -r build-output.zip . -x "*.git*" "buildspec.yml"
 
   post_build:
     commands:
-      - echo "Validating NGINX config"
-      - nginx -t
-      - echo "Starting NGINX directly (no systemd in CodeBuild)"
-      - nginx
+      - echo Build successful!
 
 artifacts:
   files:
-    - /usr/share/nginx/html/index.html
+    - '**/*'
+  discard-paths: no
