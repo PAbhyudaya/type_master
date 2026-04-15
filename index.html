@@ -5,36 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>typeFL0</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <div class="logo">
+            <div class="brand">
                 <span class="logo-text">typeFL0</span>
+                <!-- <span class="brand-subtitle">minimal typing, persistent flow</span> -->
             </div>
-            <!-- <nav class="nav">
-                <a href="#" class="nav-icon">👑</a>
-                <a href="#" class="nav-icon">ℹ️</a>
-                <a href="#" class="nav-icon">⚙️</a>
-                <a href="#" class="nav-icon">🔔</a>
-                <a href="#" class="nav-icon">👤</a>
-            </nav> -->
+            <button class="theme-toggle" id="themeToggleBtn" type="button" aria-label="Toggle theme">
+                <span class="theme-toggle-label">theme</span>
+                <strong id="themeLabel">midnight</strong>
+            </button>
         </header>
+
+        <!-- <section class="hero">
+            <div>
+                <p class="eyebrow">focus mode</p>
+                <h1>Type fast. Keep it clean.</h1>
+                <p class="hero-copy">Settings stay out of the way. Your best pace, accuracy, and streak stay visible.</p>
+            </div>
+        </section> -->
 
         <!-- Settings Bar -->
         <div class="settings-bar">
             <div class="setting-group">
                 <button class="setting-btn" data-setting="punctuation"> punctuation</button>
                 <button class="setting-btn" data-setting="numbers"> numbers</button>
-                <button class="setting-btn active" data-setting="time">time</button>
+                <button class="mode-btn active" data-mode="time">time</button>
+                <!-- <button class="mode-btn" data-mode="words">words</button> -->
             </div>
-            <div class="time-options">
+            <div class="time-options" id="timeOptions">
                 <button class="time-btn">15</button>
                 <button class="time-btn active">30</button>
                 <button class="time-btn">60</button>
                 <button class="time-btn">120</button>
+            </div>
+            <div class="words-options" id="wordsOptions" style="display: none;">
+                <button class="words-btn">10</button>
+                <button class="words-btn active">25</button>
+                <button class="words-btn">50</button>
+                <button class="words-btn">100</button>
+            </div>
+        </div>
+
+        <div class="feedback-row">
+            <div class="feedback-line" id="feedbackLine">ready when you are.</div>
+            <div class="progress-track" aria-hidden="true">
+                <div class="progress-fill" id="progressFill"></div>
             </div>
         </div>
 
@@ -95,12 +115,13 @@
             <!-- Restart Button -->
             <div class="restart-button-container">
                 <button class="restart-test-btn" id="restartTestBtn">
-                    restart test - <span>tab</span> + <span>enter</span>
+                    restart <span>tab</span> + <span>enter</span>
                 </button>
             </div>
 
             <!-- Results Area -->
             <div class="results-area" id="resultsArea" style="display: none;">
+                <h2 class="results-title">session complete</h2>
                 <div class="result-stats">
                     <div class="stat">
                         <span class="stat-label">wpm</span>
@@ -115,6 +136,7 @@
                         <span class="stat-value" id="timeValue">30s</span>
                     </div>
                 </div>
+                <div class="results-footnote" id="resultsFootnote">your best pace is saved automatically.</div>
             </div>
 
             <!-- Input Area -->
@@ -139,10 +161,6 @@
             </div>
         </footer> -->
 
-        <!-- Command Line -->
-        <div class="command-line" id="commandLine" style="display: none;">
-            <span>esc</span> or <span>ctrl</span> + <span>shift</span> + <span>p</span> - command line
-        </div>
     </div>
 
     <script src="script.js"></script>

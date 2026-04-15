@@ -1,110 +1,42 @@
-class MonkeyTypeClone {
+class TypeFlow {
     constructor() {
         this.words = [
-            'year', 'leave', 'with', 'more', 'in', 'system', 'late', 'off', 'during', 'large', 'mean', 'place',
-            'life', 'must', 'you', 'she', 'look', 'use', 'by', 'into', 'group', 'leave', 'word', 'down', 'form',
-            'know', 'problem', 'move', 'no', 'which', 'world', 'child', 'over', 'good', 'keep', 'own', 'word',
-            'time', 'work', 'first', 'way', 'long', 'make', 'thing', 'see', 'him', 'two', 'how', 'its', 'who',
-            'day', 'get', 'has', 'had', 'his', 'what', 'say', 'her', 'would', 'one', 'our', 'out', 'up', 'time',
-            'them', 'take', 'just', 'come', 'could', 'like', 'go', 'think', 'back', 'know', 'want', 'give', 'a', 
-            'data', 'structure', 'used', 'to', 'store', 'data', 'values', 'in', 'key-value', 'pairs', 'where',
-            'keys', 'are', 'unique', 'and', 'can', 'be', 'of', 'any', 'immutable', 'type', 'such', 'as', 'strings', 
-            'numbers', 'or', 'tuples', 'containing', 'only', 'immutable', 'types.', 'is', 'best', 'thought', 'of', 
-            'as', 'a', 'set', 'of', 'key:', 'value', 'pairs,', 'meaning', 'the', 'items', 'have', 'a', 'defined', 
-            'order', 'that', 'will', 'not', 'change.', 'are', 'changeable,', 'allowing', 'items', 'to', 'be', 'added', 
-            'removed,', 'or', 'modified', 'after', 'creation,', 'and', 'they', 'do', 'not', 'allow', 'duplicate', 'keys', 
-            'with', 'new', 'values', 'overwriting', 'old', 'ones', 'if', 'a', 'key', 'is', 'reused',
-            'function', 'variable', 'constant', 'array', 'object', 'class', 'method', 'property', 'loop', 'condition',
-            'statement', 'expression', 'operator', 'parameter', 'argument', 'return', 'break', 'continue', 'switch',
-            'case', 'default', 'import', 'export', 'module', 'package', 'library', 'framework', 'syntax', 'error',
-            'exception', 'catch', 'try', 'finally', 'throw', 'debug', 'compile', 'execute', 'run', 'test', 'assert',
-            'mock', 'spy', 'stub', 'async', 'await', 'promise', 'callback', 'event', 'listener', 'handler', 'queue',
-            'stack', 'heap', 'memory', 'pointer', 'reference', 'value', 'scope', 'closure', 'context', 'this',
-            'prototype', 'inheritance', 'encapsulation', 'polymorphism', 'abstraction', 'interface', 'implements',
-            'extends', 'super', 'constructor', 'destructor', 'public', 'private', 'protected', 'static', 'final',
-            'const', 'let', 'var', 'typeof', 'instanceof', 'new', 'delete', 'void', 'yield', 'import', 'export',
-            'default', 'from', 'as', 'try', 'catch', 'finally', 'throw', 'if', 'else', 'for', 'while', 'do', 'switch',
-            'case', 'break', 'continue', 'return', 'true', 'false', 'null', 'undefined', 'NaN', 'Infinity',
-            // 1000 simple English words
-            'the','of','and','a','to','in','is','you','that','it','he','was','for','on','are','as','with','his','they','I',
-            'at','be','this','have','from','or','one','had','by','word','but','not','what','all','were','we','when','your','can',
-            'said','there','use','an','each','which','she','do','how','their','if','will','up','other','about','out','many','then',
-            'them','these','so','some','her','would','make','like','him','into','time','has','look','two','more','write','go','see',
-            'number','no','way','could','people','my','than','first','water','been','call','who','oil','its','now','find','long','down',
-            'day','did','get','come','made','may','part','over','new','sound','take','only','little','work','know','place','year','live',
-            'me','back','give','most','very','after','thing','our','just','name','good','sentence','man','think','say','great','where',
-            'help','through','much','before','line','right','too','means','old','any','same','tell','boy','follow','came','want','show',
-            'also','around','form','three','small','set','put','end','does','another','well','large','must','big','even','such','because',
-            'turn','here','why','ask','went','men','read','need','land','different','home','us','move','try','kind','hand','picture','again',
-            'change','off','play','spell','air','away','animal','house','point','page','letter','mother','answer','found','study','still',
-            'learn','should','America','world','high','every','near','add','food','between','own','below','country','plant','last','school',
-            'father','keep','tree','never','start','city','earth','eye','light','thought','head','under','story','saw','left','don\'t','few',
-            'while','along','might','close','something','seem','next','hard','open','example','begin','life','always','those','both','paper',
-            'together','got','group','often','run','important','until','children','side','feet','car','mile','night','walk','white','sea',
-            'began','grow','took','river','four','carry','state','once','book','hear','stop','without','second','later','miss','idea','enough',
-            'eat','face','watch','far','Indian','real','almost','let','above','girl','sometimes','mountain','cut','young','talk','soon','list',
-            'song','being','leave','family','it\'s','body','music','color','stand','sun','question','fish','area','mark','dog','horse','bird',
-            'problem','complete','room','knew','since','ever','piece','told','usually','didn\'t','friends','easy','heard','order','red','door',
-            'sure','become','top','ship','across','today','during','short','better','best','however','low','hours','black','products','happened',
-            'whole','measure','remember','early','waves','reached','listen','wind','rock','space','covered','fast','several','hold','himself',
-            'toward','five','step','morning','passed','vowel','true','hundred','against','pattern','numeral','table','north','slowly','money',
-            'map','farm','pulled','draw','voice','seen','cold','cried','plan','notice','south','sing','war','ground','fall','king','town','I\'ll',
-            'unit','figure','certain','field','travel','wood','fire','upon','done','English','road','halt','ten','fly','gave','box','finally',
-            'wait','correct','oh','quickly','person','became','shown','minutes','strong','verb','stars','front','feel','fact','inches','street',
-            'decided','contain','course','surface','produce','building','ocean','class','note','nothing','rest','carefully','scientists','inside',
-            'wheels','stay','green','known','island','week','less','machine','base','ago','stood','plane','system','behind','ran','round','boat',
-            'game','force','brought','understand','warm','common','bring','explain','dry','though','language','shape','deep','thousands','yes',
-            'clear','equation','yet','government','filled','heat','full','hot','check','object','am','rule','among','noun','power','cannot','able',
-            'six','size','dark','ball','material','special','heavy','fine','pair','circle','include','built','can\'t','matter','square','syllables',
-            'perhaps','bill','felt','suddenly','test','direction','center','farmers','ready','anything','divided','general','energy','subject',
-            'Europe','moon','region','return','believe','dance','members','picked','simple','cells','paint','mind','love','cause','rain','exercise',
-            'eggs','train','blue','wish','drop','developed','window','difference','distance','heart','site','sum','summer','wall','forest','probably',
-            'legs','sat','main','winter','wide','written','length','reason','kept','interest','arms','brother','race','present','beautiful','store',
-            'job','edge','past','sign','record','finished','discovered','wild','happy','beside','gone','sky','glass','million','west','lay','weather',
-            'root','instruments','meet','third','months','paragraph','raised','represent','soft','whether','clothes','flowers','shall','teacher',
-            'held','describe','drive','cross','speak','solve','appear','metal','son','either','ice','sleep','village','factors','result','jumped',
-            'snow','ride','care','floor','hill','pushed','baby','buy','century','outside','everything','tall','already','instead','phrase','soil',
-            'bed','copy','free','hope','spring','case','laughed','nation','quite','type','themselves','temperature','bright','lead','everyone',
-            'method','section','lake','iron','within','dictionary','hair','age','amount','scale','pounds','although','per','broken','moment','tiny',
-            'possible','gold','milk','quiet','natural','lot','stone','act','build','middle','speed','count','consonant','someone','sail','rolled',
-            'bear','wonder','smiled','angle','fraction','Africa','killed','melody','bottom','trip','hole','poor','let\'s','fight','surprise','French',
-            'died','beat','exactly','remain','dress','cat','couldn\'t','fingers','row','least','catch','climbed','wrote','shouted','continued','itself',
-            'else','plains','gas','England','burning','design','joined','foot','law','ears','grass',
-            'brown','trouble','cool','cloud','lost','sent','symbols','wear','bad','save','experiment','engine','alone','drawing','east','pay','single',
-            'touch','information','express','mouth','yard','equal','decimal','yourself','control','practice','report','straight','rise','statement',
-            'stick','party','seeds','suppose','woman','coast','bank','period','wire','choose','clean','visit','bit','whose','received','garden','please',
-            'strange','caught','fell','team','God','captain','direct','ring','serve','child','desert','increase','history','cost','maybe','business',
-            'separate','break','uncle','hunting','flow','lady','students','human','art','feeling','supply','corner','electric','insects','crops','tone',
-            'hit','sand','doctor','provide','thus','won\'t','cook','bones','mall','board','modern','compound','mine','wasn\'t','fit','addition','belong',
-            'safe','soldiers','guess','silent','trade','rather','compare','crowd','poem','enjoy','elements','indicate','except','expect','flat','seven',
-            'interesting','sense','string','blow','famous','value','wings','movement','pole','exciting','branches','thick','blood','lie','spot','bell',
-            'fun','loud','consider','suggested','thin','position','entered','fruit','tied','rich','dollars','send','sight','chief','Japanese','stream',
-            'planets','rhythm','eight','science','major','observe','tube','necessary','weight','meat','lifted','process','army','hat','property','particular',
-            'swim','terms','current','park','sell','shoulder','industry','wash','block','spread','cattle','wife','sharp','company','radio','we\'ll','action',
-            'capital','factories','settled','yellow','isn\'t','printed','ahead','won','level','Japanese','hill','safe','cat','cent','season','clothes','sand',
-            'doctor','provide','thus','won\'t','cook','bones','mall','board','modern','compound','mine','wasn\'t','fit','addition','belong','safe','soldiers',
-            'guess','silent','trade','rather','compare','crowd','poem','enjoy','elements','indicate','except','expect','flat','seven','interesting','sense',
-            'string','blow','famous','value','wings','movement','pole','exciting','branches','thick','blood','lie','spot','bell','fun','loud','consider',
-            'suggested','thin','position','entered','fruit','tied','rich','dollars','send','sight','chief','Japanese','stream','planets','rhythm','eight',
-            'science','major','observe','tube','necessary','weight','meat','lifted','process','army','hat','property','particular','swim','terms','current',
-            'park','sell','shoulder','industry','wash','block','spread','cattle','wife','sharp','company','radio','we\'ll','action','capital','factories',
-            'settled','yellow','isn\'t','printed','ahead','won','level'
+            'time', 'work', 'first', 'way', 'long', 'make', 'thing', 'see', 'two', 'how', 'its', 'day', 'get', 'has', 'had',
+            'what', 'say', 'her', 'would', 'one', 'our', 'out', 'them', 'take', 'just', 'come', 'like', 'think', 'back',
+            'know', 'want', 'give', 'data', 'structure', 'array', 'object', 'class', 'method', 'value', 'scope', 'async',
+            'await', 'promise', 'event', 'listener', 'queue', 'stack', 'memory', 'syntax', 'compile', 'debug', 'system',
+            'network', 'server', 'client', 'module', 'package', 'function', 'variable', 'constant', 'return', 'import',
+            'export', 'framework', 'design', 'minimal', 'focus', 'habit', 'speed', 'accuracy', 'typing', 'result', 'learn',
+            'build', 'repeat', 'small', 'clear', 'better', 'clean', 'strong', 'rhythm', 'practice', 'daily', 'target',
+            'screen', 'button', 'theme', 'paper', 'midnight', 'flow', 'track', 'progress', 'streak', 'session', 'words'
         ];
-        
+
         this.currentWords = [];
         this.currentWordIndex = 0;
         this.currentCharIndex = 0;
         this.userInput = '';
+
         this.isTyping = false;
         this.startTime = null;
         this.endTime = null;
-        this.timeLimit = 30;
         this.timer = null;
+
+        this.mode = 'time';
+        this.timeLimit = 30;
         this.timeLeft = this.timeLimit;
+        this.wordsLimit = 25;
+        this.wordsCompleted = 0;
+
         this.correctChars = 0;
         this.totalChars = 0;
         this.errors = 0;
-        
+        this.streak = 0;
+        this.bestWpm = 0;
+        this.theme = 'midnight';
+
+        this.storageKey = 'typefl0.preferences';
+        this.bestKey = 'typefl0.bestWpm';
+
         this.elements = {
             typingText: document.getElementById('typingText'),
             cursor: document.getElementById('cursor'),
@@ -113,106 +45,130 @@ class MonkeyTypeClone {
             wpmValue: document.getElementById('wpmValue'),
             accValue: document.getElementById('accValue'),
             timeValue: document.getElementById('timeValue'),
-            commandLine: document.getElementById('commandLine'),
             timerValue: document.getElementById('timerValue'),
-            restartTestBtn: document.getElementById('restartTestBtn')
+            restartTestBtn: document.getElementById('restartTestBtn'),
+            commandLine: document.getElementById('commandLine'),
+            feedbackLine: document.getElementById('feedbackLine'),
+            progressFill: document.getElementById('progressFill'),
+            themeToggleBtn: document.getElementById('themeToggleBtn'),
+            themeLabel: document.getElementById('themeLabel'),
+            timeOptions: document.getElementById('timeOptions'),
+            wordsOptions: document.getElementById('wordsOptions'),
+            resultsFootnote: document.getElementById('resultsFootnote')
         };
-        
+
         this.punctuationEnabled = false;
         this.numbersEnabled = false;
-        
+
+        this.loadPreferences();
         this.init();
     }
-    
+
     init() {
+        this.applyTheme();
+        this.syncControls();
+        this.updateTimerDisplay();
+        this.updateProgress();
+        this.updateFeedbackLine('ready when you are.');
         this.generateWords();
         this.setupEventListeners();
         this.updateCursor();
         this.focusInput();
         this.setCursorBlinking(true);
     }
-    
-    generateWords() {
-        this.currentWords = [];
-        const punctuationMarks = ['.', ',', '!', '?', ';', ':'];
-        const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-        for (let i = 0; i < 50; i++) {
-            const randomIndex = Math.floor(Math.random() * this.words.length);
-            let word = this.words[randomIndex];
-
-            // Add numbers if enabled (prefix)
-            if (this.numbersEnabled && Math.random() < 0.1) {
-                const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-                word = randomNumber + word;
+    loadPreferences() {
+        try {
+            const preferencesRaw = localStorage.getItem(this.storageKey);
+            if (preferencesRaw) {
+                const prefs = JSON.parse(preferencesRaw);
+                this.mode = prefs.mode || this.mode;
+                // Keep 30s as the default startup time.
+                this.timeLimit = 30;
+                this.wordsLimit = prefs.wordsLimit ?? this.wordsLimit;
+                this.punctuationEnabled = Boolean(prefs.punctuationEnabled);
+                this.numbersEnabled = Boolean(prefs.numbersEnabled);
+                this.theme = prefs.theme || this.theme;
+                this.timeLeft = this.timeLimit;
             }
 
-            // Add punctuation/capitalization if enabled
-            if (this.punctuationEnabled) {
-                // Randomly capitalize (about 1 in 4 words)
-                if (Math.random() < 0.25 && word.length > 0) {
-                    word = word[0].toUpperCase() + word.slice(1);
-                }
-                // Add punctuation (about 1 in 5 words)
-                if (Math.random() < 0.2 && !punctuationMarks.includes(word[word.length - 1])) {
-                    const randomPunct = punctuationMarks[Math.floor(Math.random() * punctuationMarks.length)];
-                    word += randomPunct;
-                }
+            const bestRaw = localStorage.getItem(this.bestKey);
+            if (bestRaw) {
+                this.bestWpm = Number(bestRaw) || 0;
             }
-
-            this.currentWords.push(word);
+        } catch (error) {
+            // Ignore storage errors.
         }
-        this.renderWords();
     }
-    
-    renderWords() {
-        this.elements.typingText.innerHTML = '';
-        this.currentWords.forEach((word, wordIndex) => {
-            const wordElement = document.createElement('span');
-            wordElement.className = 'word';
-            wordElement.setAttribute('data-word-index', wordIndex);
-            
-            for (let i = 0; i < word.length; i++) {
-                const letterElement = document.createElement('span');
-                letterElement.className = 'letter';
-                letterElement.textContent = word[i];
-                letterElement.setAttribute('data-char-index', i);
-                wordElement.appendChild(letterElement);
+
+    savePreferences() {
+        try {
+            localStorage.setItem(this.storageKey, JSON.stringify({
+                mode: this.mode,
+                timeLimit: this.timeLimit,
+                wordsLimit: this.wordsLimit,
+                punctuationEnabled: this.punctuationEnabled,
+                numbersEnabled: this.numbersEnabled,
+                theme: this.theme
+            }));
+            localStorage.setItem(this.bestKey, String(this.bestWpm));
+        } catch (error) {
+            // Ignore storage errors.
+        }
+    }
+
+    applyTheme() {
+        const activeTheme = this.theme === 'paper' ? 'paper' : 'midnight';
+        document.body.setAttribute('data-theme', activeTheme);
+        if (this.elements.themeLabel) {
+            this.elements.themeLabel.textContent = activeTheme;
+        }
+    }
+
+    syncControls() {
+        document.querySelectorAll('.setting-btn').forEach(btn => {
+            const setting = btn.getAttribute('data-setting');
+            if (setting === 'punctuation') {
+                btn.classList.toggle('active', this.punctuationEnabled);
             }
-            
-            this.elements.typingText.appendChild(wordElement);
-            
-            // Add space after word (except last word)
-            if (wordIndex < this.currentWords.length - 1) {
-                const spaceElement = document.createElement('span');
-                spaceElement.className = 'letter space';
-                spaceElement.textContent = ' ';
-                spaceElement.setAttribute('data-char-index', word.length);
-                wordElement.appendChild(spaceElement);
+            if (setting === 'numbers') {
+                btn.classList.toggle('active', this.numbersEnabled);
             }
         });
-        
-        this.updateWordHighlight();
+
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-mode') === this.mode);
+        });
+
+        document.querySelectorAll('.time-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.textContent.trim() === String(this.timeLimit));
+        });
+
+        document.querySelectorAll('.words-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.textContent.trim() === String(this.wordsLimit));
+        });
+
+        if (this.elements.timeOptions && this.elements.wordsOptions) {
+            this.elements.timeOptions.style.display = this.mode === 'time' ? 'inline-flex' : 'none';
+            this.elements.wordsOptions.style.display = this.mode === 'words' ? 'inline-flex' : 'none';
+        }
     }
-    
+
     setupEventListeners() {
-        // Hidden input for capturing keystrokes
         this.elements.hiddenInput.addEventListener('input', (e) => {
             this.handleInput(e.target.value);
         });
-        
+
         this.elements.hiddenInput.addEventListener('keydown', (e) => {
             if (e.key === 'Backspace') {
                 this.handleBackspace();
             }
         });
-        
-        // Focus management
+
         document.addEventListener('click', () => {
             this.focusInput();
         });
-        
-        // Keyboard shortcuts
+
         let tabPressed = false;
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Tab' && e.shiftKey) {
@@ -221,7 +177,7 @@ class MonkeyTypeClone {
             } else if (e.key === 'Tab') {
                 e.preventDefault();
                 tabPressed = true;
-                setTimeout(() => { tabPressed = false; }, 1000); // Reset after 1 second
+                setTimeout(() => { tabPressed = false; }, 1000);
             } else if (e.key === 'Enter' && tabPressed) {
                 e.preventDefault();
                 this.restart();
@@ -231,109 +187,235 @@ class MonkeyTypeClone {
                 this.toggleCommandLine();
             }
         });
-        
-        // Restart test button
+
         this.elements.restartTestBtn.addEventListener('click', () => {
             this.restart();
         });
-        
-        // Settings buttons
-        document.querySelectorAll('.time-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                this.setTimeLimit(e.target.textContent);
+
+        if (this.elements.themeToggleBtn) {
+            this.elements.themeToggleBtn.addEventListener('click', () => {
+                this.theme = this.theme === 'paper' ? 'midnight' : 'paper';
+                this.applyTheme();
+                this.savePreferences();
             });
-        });
-        
+        }
+
         document.querySelectorAll('.setting-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                this.toggleSetting(e.target);
+                this.toggleSetting(e.currentTarget);
             });
         });
+
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                this.setMode(e.currentTarget.getAttribute('data-mode'));
+            });
+        });
+
+        document.querySelectorAll('.time-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                this.setTimeLimit(e.currentTarget.textContent);
+            });
+        });
+
+        document.querySelectorAll('.words-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                this.setWordsLimit(e.currentTarget.textContent);
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (!this.isTyping) {
+                this.generateWords();
+                this.updateCursor();
+            }
+        });
     }
-    
+
     focusInput() {
         this.elements.hiddenInput.focus();
-        document.body.classList.add('typing');
     }
-    
+
+    toggleSetting(button) {
+        const setting = button.getAttribute('data-setting');
+        if (setting === 'punctuation') {
+            this.punctuationEnabled = !this.punctuationEnabled;
+        }
+        if (setting === 'numbers') {
+            this.numbersEnabled = !this.numbersEnabled;
+        }
+        this.savePreferences();
+        this.restart();
+    }
+
+    setMode(mode) {
+        this.mode = mode === 'words' ? 'words' : 'time';
+        this.savePreferences();
+        this.syncControls();
+        this.restart();
+    }
+
+    setTimeLimit(time) {
+        this.timeLimit = parseInt(time, 10);
+        this.timeLeft = this.timeLimit;
+        this.savePreferences();
+        this.syncControls();
+        this.restart();
+    }
+
+    setWordsLimit(words) {
+        this.wordsLimit = parseInt(words, 10);
+        this.savePreferences();
+        this.syncControls();
+        this.restart();
+    }
+
+    generateWords() {
+        this.currentWords = [];
+        const punctuationMarks = ['.', ',', '!', '?', ';', ':'];
+        const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+        const requested = this.mode === 'words'
+            ? Math.max(this.wordsLimit - this.wordsCompleted, 1)
+            : 60;
+
+        for (let i = 0; i < requested; i++) {
+            const randomIndex = Math.floor(Math.random() * this.words.length);
+            let word = this.words[randomIndex];
+
+            if (this.numbersEnabled && Math.random() < 0.1) {
+                const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+                word = randomNumber + word;
+            }
+
+            if (this.punctuationEnabled) {
+                if (Math.random() < 0.22 && word.length > 0) {
+                    word = word[0].toUpperCase() + word.slice(1);
+                }
+                if (Math.random() < 0.18 && !punctuationMarks.includes(word[word.length - 1])) {
+                    const randomPunctuation = punctuationMarks[Math.floor(Math.random() * punctuationMarks.length)];
+                    word += randomPunctuation;
+                }
+            }
+
+            this.currentWords.push(word);
+        }
+
+        this.renderWords();
+        this.fitWordsToThreeLines();
+    }
+
+    renderWords() {
+        this.elements.typingText.innerHTML = '';
+
+        this.currentWords.forEach((word, wordIndex) => {
+            const wordElement = document.createElement('span');
+            wordElement.className = 'word';
+            wordElement.setAttribute('data-word-index', String(wordIndex));
+
+            for (let i = 0; i < word.length; i++) {
+                const letterElement = document.createElement('span');
+                letterElement.className = 'letter';
+                letterElement.textContent = word[i];
+                letterElement.setAttribute('data-char-index', String(i));
+                wordElement.appendChild(letterElement);
+            }
+
+            if (wordIndex < this.currentWords.length - 1) {
+                const spaceElement = document.createElement('span');
+                spaceElement.className = 'letter space';
+                spaceElement.textContent = ' ';
+                spaceElement.setAttribute('data-char-index', String(word.length));
+                wordElement.appendChild(spaceElement);
+            }
+
+            this.elements.typingText.appendChild(wordElement);
+        });
+
+        this.updateWordHighlight();
+    }
+
+    fitWordsToThreeLines() {
+        const wordElements = [...this.elements.typingText.querySelectorAll('.word')];
+        if (wordElements.length === 0) {
+            return;
+        }
+
+        const lines = new Set();
+        let keepUntil = wordElements.length - 1;
+
+        for (let i = 0; i < wordElements.length; i++) {
+            lines.add(wordElements[i].offsetTop);
+            if (lines.size > 3) {
+                keepUntil = i - 1;
+                break;
+            }
+        }
+
+        if (keepUntil < 1) {
+            keepUntil = Math.min(wordElements.length - 1, 8);
+        }
+
+        this.currentWords = this.currentWords.slice(0, keepUntil + 1);
+        wordElements.forEach((wordElement, index) => {
+            if (index > keepUntil) {
+                wordElement.remove();
+            }
+        });
+
+        [...this.elements.typingText.querySelectorAll('.word')].forEach((wordElement, index) => {
+            wordElement.setAttribute('data-word-index', String(index));
+        });
+    }
+
+    getCurrentWord() {
+        return this.currentWords[this.currentWordIndex] || '';
+    }
+
+    getCurrentWordElement() {
+        return this.elements.typingText.querySelector(`[data-word-index="${this.currentWordIndex}"]`);
+    }
+
     handleInput(value) {
         if (!this.isTyping) {
             this.startTest();
             this.setCursorBlinking(false);
         }
-        
+
         this.userInput = value;
         this.updateDisplay();
         this.updateCursor();
-        
-        // Check if word is completed
-        const currentWord = this.currentWords[this.currentWordIndex];
+
         if (value.endsWith(' ')) {
             this.completeWord();
-        } else if (value.length > currentWord.length) {
-            // Handle extra characters
-            this.handleExtraChars();
         }
+
+        this.updateFeedback();
     }
-    
+
     handleBackspace() {
-        if (this.userInput.length > 0) {
-            this.userInput = this.userInput.slice(0, -1);
-            this.updateDisplay();
-            this.updateCursor();
-        } else if (this.currentWordIndex > 0) {
-            // Go back to previous word
-            this.currentWordIndex--;
-            this.currentCharIndex = this.currentWords[this.currentWordIndex].length;
-            this.userInput = this.currentWords[this.currentWordIndex];
-            this.updateWordHighlight();
-            this.updateDisplay();
-            this.updateCursor();
-        }
-    }
-    
-    completeWord() {
-        const currentWord = this.currentWords[this.currentWordIndex];
-        const typedWord = this.userInput.trim();
-        
-        // Mark word as correct or incorrect
-        const wordElement = document.querySelector(`[data-word-index="${this.currentWordIndex}"]`);
-        if (typedWord === currentWord) {
-            wordElement.classList.add('correct');
-            this.correctChars += currentWord.length + 1; // +1 for space
-        } else {
-            wordElement.classList.add('incorrect');
-            this.errors++;
-        }
-        
-        this.totalChars += currentWord.length + 1;
-        
-        // Move to next word
-        this.currentWordIndex++;
-        this.currentCharIndex = 0;
-        this.userInput = '';
-        this.elements.hiddenInput.value = '';
-        
-        this.updateWordHighlight();
+        this.userInput = this.userInput.slice(0, -1);
+        this.elements.hiddenInput.value = this.userInput;
+        this.updateDisplay();
         this.updateCursor();
-        
-        // Check if test should end
-        if (this.currentWordIndex >= this.currentWords.length) {
-            this.endTest();
-        }
     }
-    
+
     updateDisplay() {
-        const currentWord = this.currentWords[this.currentWordIndex];
-        const wordElement = document.querySelector(`[data-word-index="${this.currentWordIndex}"]`);
+        const currentWord = this.getCurrentWord();
+        const wordElement = this.getCurrentWordElement();
+
+        if (!wordElement || !currentWord) {
+            return;
+        }
+
         const letters = wordElement.querySelectorAll('.letter:not(.space)');
-        
-        // Reset letter classes
+
         letters.forEach(letter => {
             letter.classList.remove('correct', 'incorrect', 'extra');
         });
-        
-        // Update letter states
+
+        wordElement.querySelectorAll('.letter.extra').forEach(extraLetter => extraLetter.remove());
+
         for (let i = 0; i < Math.max(this.userInput.length, currentWord.length); i++) {
             if (i < letters.length) {
                 const letter = letters[i];
@@ -345,181 +427,221 @@ class MonkeyTypeClone {
                     }
                 }
             } else if (i < this.userInput.length) {
-                // Extra characters
                 const extraLetter = document.createElement('span');
                 extraLetter.className = 'letter extra';
                 extraLetter.textContent = this.userInput[i];
-                wordElement.insertBefore(extraLetter, wordElement.querySelector('.space'));
+                const spaceNode = wordElement.querySelector('.space');
+                if (spaceNode) {
+                    wordElement.insertBefore(extraLetter, spaceNode);
+                } else {
+                    wordElement.appendChild(extraLetter);
+                }
             }
         }
-        
+
         this.currentCharIndex = this.userInput.length;
     }
-    
+
+    completeWord() {
+        const currentWord = this.getCurrentWord();
+        const typedWord = this.userInput.trim();
+        const wordElement = this.getCurrentWordElement();
+
+        if (!currentWord || !wordElement) {
+            return;
+        }
+
+        if (typedWord === currentWord) {
+            wordElement.classList.add('correct');
+            this.correctChars += currentWord.length + 1;
+            this.streak += 1;
+        } else {
+            wordElement.classList.add('incorrect');
+            this.errors += 1;
+            this.streak = 0;
+        }
+
+        this.totalChars += currentWord.length + 1;
+        this.wordsCompleted += 1;
+
+        this.currentWordIndex += 1;
+        this.currentCharIndex = 0;
+        this.userInput = '';
+        this.elements.hiddenInput.value = '';
+
+        if (this.mode === 'words' && this.wordsCompleted >= this.wordsLimit) {
+            this.endTest();
+            return;
+        }
+
+        if (this.currentWordIndex >= this.currentWords.length) {
+            this.currentWordIndex = 0;
+            this.currentCharIndex = 0;
+            this.generateWords();
+        }
+
+        this.updateWordHighlight();
+        this.updateCursor();
+        this.updateProgress();
+        this.updateFeedback();
+    }
+
     updateWordHighlight() {
-        // Remove current class from all words
-        document.querySelectorAll('.word').forEach(word => {
+        this.elements.typingText.querySelectorAll('.word').forEach(word => {
             word.classList.remove('current');
         });
-        
-        // Add current class to current word
-        const currentWordElement = document.querySelector(`[data-word-index="${this.currentWordIndex}"]`);
+
+        const currentWordElement = this.getCurrentWordElement();
         if (currentWordElement) {
             currentWordElement.classList.add('current');
         }
     }
-    
+
     updateCursor() {
-        const currentWordElement = document.querySelector(`[data-word-index="${this.currentWordIndex}"]`);
-        if (!currentWordElement) return;
-        
+        const currentWordElement = this.getCurrentWordElement();
+        if (!currentWordElement) {
+            return;
+        }
+
         const letters = currentWordElement.querySelectorAll('.letter');
-        let targetLetter;
-        
-        if (this.currentCharIndex < letters.length - 1) {
-            targetLetter = letters[this.currentCharIndex];
-        } else {
-            targetLetter = letters[letters.length - 1]; // Space or last letter
+        if (letters.length === 0) {
+            return;
         }
-        
-        if (targetLetter) {
-            const rect = targetLetter.getBoundingClientRect();
-            const containerRect = this.elements.typingText.getBoundingClientRect();
-            
-            const left = rect.left - containerRect.left + (this.currentCharIndex >= currentWordElement.querySelectorAll('.letter:not(.space)').length ? rect.width : 0);
-            const top = rect.top - containerRect.top;
-            
-            this.elements.cursor.style.left = `${left}px`;
-            this.elements.cursor.style.top = `${top}px`;
-            
-            // Auto-scroll functionality
-            this.autoScroll();
+
+        const textLetters = currentWordElement.querySelectorAll('.letter:not(.space)');
+        let target = letters[Math.min(this.currentCharIndex, letters.length - 1)];
+        let offset = 0;
+
+        if (this.currentCharIndex >= textLetters.length) {
+            offset = target.getBoundingClientRect().width;
         }
+
+        const rect = target.getBoundingClientRect();
+        const containerRect = this.elements.typingText.getBoundingClientRect();
+
+        this.elements.cursor.style.left = `${rect.left - containerRect.left + offset}px`;
+        this.elements.cursor.style.top = `${rect.top - containerRect.top}px`;
     }
-    
-    autoScroll() {
-        const currentWordElement = document.querySelector(`[data-word-index="${this.currentWordIndex}"]`);
-        if (!currentWordElement) return;
-        
-        const container = this.elements.typingText;
-        const containerHeight = container.offsetHeight;
-        const containerScrollTop = container.scrollTop;
-        
-        // Get the position of the current word relative to the container
-        const wordRect = currentWordElement.getBoundingClientRect();
-        const containerRect = container.getBoundingClientRect();
-        const wordTop = wordRect.top - containerRect.top + containerScrollTop;
-        const wordHeight = wordRect.height;
-        
-        // Calculate the line height (using the word height as a reference)
-        const lineHeight = wordHeight;
-        
-        // Check if we need to scroll
-        const visibleTop = containerScrollTop;
-        const visibleBottom = containerScrollTop + containerHeight;
-        
-        // If the current word is below the visible area or close to the bottom
-        if (wordTop + lineHeight > visibleBottom - lineHeight) {
-            // Scroll down to show the next line
-            container.scrollTop = wordTop - lineHeight;
-        }
-        // If the current word is above the visible area
-        else if (wordTop < visibleTop) {
-            // Scroll up to show the current line
-            container.scrollTop = wordTop - lineHeight;
-        }
-    }
-    
+
     startTest() {
         this.isTyping = true;
         this.startTime = Date.now();
-        this.timeLeft = this.timeLimit;
-        this.updateTimerDisplay();
-        
-        this.timer = setInterval(() => {
-            this.timeLeft--;
+
+        if (this.mode === 'time') {
+            this.timeLeft = this.timeLimit;
             this.updateTimerDisplay();
-            if (this.timeLeft <= 0) {
-                this.endTest();
-            }
-        }, 1000);
-    }
-    
-    updateTimerDisplay() {
-        if (this.elements.timerValue) {
-            this.elements.timerValue.textContent = this.timeLeft;
+            this.timer = setInterval(() => {
+                this.timeLeft -= 1;
+                this.updateTimerDisplay();
+                this.updateProgress();
+                this.updateFeedback();
+                if (this.timeLeft <= 0) {
+                    this.endTest();
+                }
+            }, 1000);
         }
+
+        this.updateFeedback();
     }
-    
+
     endTest() {
+        if (!this.isTyping) {
+            return;
+        }
+
         this.isTyping = false;
         this.endTime = Date.now();
-        
+
         if (this.timer) {
             clearInterval(this.timer);
+            this.timer = null;
         }
-        
+
         this.setCursorBlinking(true);
         this.calculateResults();
         this.showResults();
     }
-    
+
     calculateResults() {
-        const timeElapsed = (this.endTime - this.startTime) / 1000 / 60; // in minutes
-        const wpm = Math.round((this.correctChars / 5) / timeElapsed);
-        const accuracy = Math.round((this.correctChars / this.totalChars) * 100);
-        
-        this.elements.wpmValue.textContent = wpm || 0;
-        this.elements.accValue.textContent = `${accuracy || 0}%`;
-        this.elements.timeValue.textContent = `${this.timeLimit}s`;
+        const previousBest = this.bestWpm;
+        const elapsedMinutes = this.startTime ? Math.max((this.endTime - this.startTime) / 1000 / 60, 1 / 120) : 1 / 120;
+        const wpm = Math.round((this.correctChars / 5) / elapsedMinutes) || 0;
+        const accuracy = this.totalChars > 0 ? Math.round((this.correctChars / this.totalChars) * 100) : 0;
+
+        if (wpm > this.bestWpm) {
+            this.bestWpm = wpm;
+            this.savePreferences();
+        }
+
+        this.elements.wpmValue.textContent = String(wpm);
+        this.elements.accValue.textContent = `${accuracy}%`;
+        this.elements.timeValue.textContent = this.mode === 'words' ? `${this.wordsCompleted}w` : `${this.timeLimit}s`;
+
+        if (this.elements.resultsFootnote) {
+            this.elements.resultsFootnote.textContent = wpm > previousBest
+                ? 'new personal best saved.'
+                : `best wpm: ${this.bestWpm}`;
+        }
+
+        this.updateFeedbackLine(wpm > previousBest ? 'new best set.' : 'session complete.');
     }
-    
+
     showResults() {
         this.elements.typingText.style.display = 'none';
+        this.elements.cursor.classList.add('hidden');
         this.elements.resultsArea.style.display = 'flex';
-        // Hide timer during results
+
         if (this.elements.timerValue && this.elements.timerValue.parentElement) {
             this.elements.timerValue.parentElement.style.display = 'none';
         }
-        // Don't show command line anymore, user can use restart button
     }
-    
+
     restart() {
-        // Reset state
+        this.currentWords = [];
         this.currentWordIndex = 0;
         this.currentCharIndex = 0;
         this.userInput = '';
+
         this.isTyping = false;
         this.startTime = null;
         this.endTime = null;
         this.timeLeft = this.timeLimit;
+        this.wordsCompleted = 0;
+
         this.correctChars = 0;
         this.totalChars = 0;
         this.errors = 0;
-        
+        this.streak = 0;
+
         if (this.timer) {
             clearInterval(this.timer);
+            this.timer = null;
         }
-        
-        // Reset UI
+
         this.elements.hiddenInput.value = '';
         this.elements.typingText.style.display = 'flex';
-        this.elements.typingText.scrollTop = 0; // Reset scroll position
+        this.elements.cursor.classList.remove('hidden');
         this.elements.resultsArea.style.display = 'none';
-        this.elements.commandLine.style.display = 'none';
-        // Show timer again
+        if (this.elements.commandLine) {
+            this.elements.commandLine.style.display = 'none';
+        }
+
         if (this.elements.timerValue && this.elements.timerValue.parentElement) {
             this.elements.timerValue.parentElement.style.display = 'flex';
         }
+
+        this.syncControls();
         this.updateTimerDisplay();
-        
-        // Generate new words and reset display
+        this.updateProgress();
+        this.updateFeedbackLine('ready when you are.');
+
         this.generateWords();
+        this.updateWordHighlight();
         this.updateCursor();
         this.focusInput();
         this.setCursorBlinking(true);
     }
-    
+
     setCursorBlinking(shouldBlink) {
         if (shouldBlink) {
             this.elements.cursor.classList.add('blinking');
@@ -529,145 +651,73 @@ class MonkeyTypeClone {
             this.elements.cursor.classList.add('typing');
         }
     }
-    
-    setTimeLimit(time) {
-        this.timeLimit = parseInt(time);
-        this.timeLeft = this.timeLimit;
-        this.updateTimerDisplay();
-        
-        // Update button states
-        document.querySelectorAll('.time-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        event.target.classList.add('active');
-        
-        this.restart();
-    }
-    
-    toggleSetting(button) {
-        const setting = button.getAttribute('data-setting');
-        
-        if (setting === 'punctuation') {
-            this.punctuationEnabled = !this.punctuationEnabled;
-            button.classList.toggle('active', this.punctuationEnabled);
-            this.generateWords();
-        } else if (setting === 'numbers') {
-            this.numbersEnabled = !this.numbersEnabled;
-            button.classList.toggle('active', this.numbersEnabled);
-            this.generateWords();
+
+    updateFeedback() {
+        const elapsedMinutes = this.isTyping && this.startTime
+            ? Math.max((Date.now() - this.startTime) / 1000 / 60, 1 / 120)
+            : 0;
+        const wpm = elapsedMinutes > 0 ? Math.round((this.correctChars / 5) / elapsedMinutes) : 0;
+        const accuracy = this.totalChars > 0 ? Math.round((this.correctChars / this.totalChars) * 100) : 100;
+
+        if (!this.isTyping) {
+            this.updateFeedbackLine('ready when you are.');
+            return;
+        }
+
+        if (this.mode === 'words') {
+            this.updateFeedbackLine(`${this.wordsCompleted}/${this.wordsLimit} words completed.`);
+            return;
+        }
+
+        if (accuracy < 92) {
+            this.updateFeedbackLine('slow down a notch. clean beats fast.');
+        } else if (wpm >= this.bestWpm && wpm > 0) {
+            this.updateFeedbackLine('on pace for a new best.');
+        } else if (wpm >= 80) {
+            this.updateFeedbackLine('strong pace. keep the rhythm.');
         } else {
-            button.classList.toggle('active');
+            this.updateFeedbackLine('build the rhythm, one word at a time.');
         }
     }
-    
+
+    updateFeedbackLine(message) {
+        if (this.elements.feedbackLine) {
+            this.elements.feedbackLine.textContent = message;
+        }
+    }
+
+    updateProgress() {
+        if (!this.elements.progressFill) {
+            return;
+        }
+
+        const progress = this.mode === 'words'
+            ? (this.wordsLimit > 0 ? (this.wordsCompleted / this.wordsLimit) * 100 : 0)
+            : (this.timeLimit > 0 ? ((this.timeLimit - this.timeLeft) / this.timeLimit) * 100 : 0);
+
+        this.elements.progressFill.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+    }
+
+    updateTimerDisplay() {
+        if (!this.elements.timerValue) {
+            return;
+        }
+
+        this.elements.timerValue.textContent = this.mode === 'words'
+            ? String(this.wordsLimit)
+            : String(this.timeLeft);
+    }
+
     toggleCommandLine() {
-        const isVisible = this.elements.commandLine.style.display !== 'none';
-        this.elements.commandLine.style.display = isVisible ? 'none' : 'block';
-    }
-    
-    handleExtraChars() {
-        // This method handles when user types more characters than the word length
-        // Implementation depends on specific requirements
-    }
-}
-
-// Initialize the typing test when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new MonkeyTypeClone();
-});
-
-// Additional utility functions
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
-// Theme management (could be extended)
-class ThemeManager {
-    constructor() {
-        this.currentTheme = 'dark';
-    }
-    
-    setTheme(theme) {
-        document.body.className = theme;
-        this.currentTheme = theme;
-    }
-    
-    toggleTheme() {
-        const newTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
-        this.setTheme(newTheme);
-    }
-}
-
-// Keyboard shortcuts handler
-document.addEventListener('keydown', (e) => {
-    // Global shortcuts that work regardless of focus
-    if (e.ctrlKey && e.shiftKey && e.key === 'P') {
-        e.preventDefault();
-        // Toggle command palette
-        console.log('Command palette toggled');
-    }
-    
-    if (e.key === 'F1') {
-        e.preventDefault();
-        // Show help
-        console.log('Help toggled');
-    }
-});
-
-// Performance monitoring
-class PerformanceMonitor {
-    constructor() {
-        this.keystrokes = [];
-        this.wpmHistory = [];
-    }
-    
-    recordKeystroke(timestamp, char, isCorrect) {
-        this.keystrokes.push({
-            timestamp,
-            char,
-            isCorrect
-        });
-    }
-    
-    calculateRealtimeWPM() {
-        // Calculate WPM based on recent keystrokes
-        const now = Date.now();
-        const recentKeystrokes = this.keystrokes.filter(k => now - k.timestamp < 5000);
-        
-        if (recentKeystrokes.length === 0) return 0;
-        
-        const timeSpan = (now - recentKeystrokes[0].timestamp) / 1000 / 60;
-        const correctChars = recentKeystrokes.filter(k => k.isCorrect).length;
-        
-        return Math.round((correctChars / 5) / timeSpan);
-    }
-}
-
-// Sound effects (optional)
-class SoundManager {
-    constructor() {
-        this.enabled = false;
-        this.sounds = {
-            keypress: new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmEcBzuZ2/HBGAIAAgACAAAAABQF...'), // Placeholder base64 audio
-            error: new Audio(),
-            complete: new Audio()
-        };
-    }
-    
-    play(soundName) {
-        if (this.enabled && this.sounds[soundName]) {
-            this.sounds[soundName].currentTime = 0;
-            this.sounds[soundName].play().catch(() => {
-                // Ignore audio play errors
-            });
+        if (!this.elements.commandLine) {
+            return;
         }
-    }
-    
-    toggle() {
-        this.enabled = !this.enabled;
+
+        const visible = this.elements.commandLine.style.display !== 'none';
+        this.elements.commandLine.style.display = visible ? 'none' : 'block';
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    new TypeFlow();
+});
